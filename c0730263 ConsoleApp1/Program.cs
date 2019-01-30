@@ -25,8 +25,9 @@ namespace c0730263_ConsoleApp1
             Village Maple = new Village();
             Village Toronto = new Village();
             Village Ajax = new Village();
-            Village first;
+            Village First;
             Village last;
+            Village Temp;
             public void Launch()
             {
                 Maple.VillageName = "Maple";
@@ -40,6 +41,20 @@ namespace c0730263_ConsoleApp1
                 Ajax.nextVillage = Toronto;
                 
 
+            }
+            public string displayMap()
+            {
+                String listofCities = "";
+                //We need to print all the cities in our area
+                while(true)
+                {
+                    listofCities = listofCities + First.VillageName;
+                    Temp = First.nextVillage;
+                    listofCities = listofCities + Temp.VillageName;
+
+                    return listofCities;
+                    
+                }
             }
         }
     }
